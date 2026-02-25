@@ -7,8 +7,8 @@ export const resumeConfig: ResumeConfig = {
     photo: '/images/photocv.jpg',
     photoBackEmoji: '💻',
     title: {
-      en: 'Ingénieur Logiciel',
-      fr: 'Software Engineer',
+      en: 'Software Engineer',
+      fr: 'Ingénieur Logiciel',
     },
     subtitle: {
       en: 'Microservices & Distributed Architectures · 2 years experience',
