@@ -25,7 +25,7 @@ export function MainContent() {
   return (
     <div className="md:w-[62%] p-8">
       {/* Header */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <h1 className="text-3xl md:text-4xl font-bold tracking-[0.15em] text-resume-text">
           {personal.name.toUpperCase()}
         </h1>
@@ -36,6 +36,18 @@ export function MainContent() {
           <p className="text-sm text-resume-primary mt-1">{resolve(personal.subtitle)}</p>
         )}
       </div>
+
+      {/* Profile / Summary */}
+      {personal.profile && labels.sections.profile && (
+        <div className="mb-8">
+          <h2 className="text-sm font-bold tracking-widest text-resume-text mb-3 pb-2 border-b border-resume-primary/20">
+            {resolve(labels.sections.profile)}
+          </h2>
+          <p className="text-sm text-resume-text-secondary leading-relaxed">
+            {resolve(personal.profile)}
+          </p>
+        </div>
+      )}
 
       {/* Experiences */}
       <div className="relative">

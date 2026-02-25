@@ -14,6 +14,10 @@ export const resumeConfig: ResumeConfig = {
       en: 'Microservices & Distributed Architectures · 2 years experience',
       fr: 'Microservices & Architectures Distribuées · 2 ans d\'expérience',
     },
+    profile: {
+      en: 'Software engineering graduate specializing in backend development and distributed architectures, with 2 years of experience at SNCF Reseau. Passionate about designing robust, scalable systems — from enterprise Java applications to Go microservices and automated trading platforms. Driven by technical curiosity, I combine rigorous engineering practice with a hands-on approach to complex problem-solving.',
+      fr: 'Ingénieur logiciel spécialisé en développement backend et architectures distribuées, avec 2 ans d\'expérience chez SNCF Réseau. Passionné par la conception de systèmes robustes et scalables — des applications Java d\'entreprise aux microservices Go en passant par les plateformes de trading algorithmique. Animé par la curiosité technique, j\'associe rigueur d\'ingénierie et approche concrète de la résolution de problèmes complexes.',
+    },
     location: 'Paris, France',
   },
 
@@ -132,13 +136,28 @@ export const resumeConfig: ResumeConfig = {
         { name: 'Code Review', color: '#F05032' },
       ],
     },
+  ],
+
+  // ===== SOFT SKILLS =====
+  softSkills: [
+    { name: { en: 'Autonomy', fr: 'Autonomie' }, icon: '🎯' },
+    { name: { en: 'Problem Solving', fr: 'Résolution de problèmes' }, icon: '🔍' },
+    { name: { en: 'Teamwork', fr: 'Travail en équipe' }, icon: '🤝' },
+    { name: { en: 'Technical Curiosity', fr: 'Curiosité technique' }, icon: '💡' },
+    { name: { en: 'Adaptability', fr: 'Adaptabilité' }, icon: '🔄' },
+    { name: { en: 'Rigour', fr: 'Rigueur' }, icon: '✅' },
+  ],
+
+  // ===== HUMAN LANGUAGES =====
+  humanLanguages: [
     {
-      title: { en: 'Human Languages', fr: 'Langues' },
-      type: 'languages',
-      items: [
-        { name: { en: 'French', fr: 'Français' }, level: { en: 'Native', fr: 'Natif' } },
-        { name: { en: 'English', fr: 'Anglais' }, level: { en: 'Professional B2', fr: 'Professionnel B2' }, details: 'TOEIC 900' },
-      ],
+      name: { en: 'French', fr: 'Français' },
+      level: { en: 'Native', fr: 'Natif' },
+    },
+    {
+      name: { en: 'English', fr: 'Anglais' },
+      level: { en: 'Professional B2', fr: 'Professionnel B2' },
+      details: 'TOEIC 900',
     },
   ],
 
@@ -146,7 +165,7 @@ export const resumeConfig: ResumeConfig = {
   experiences: [
     {
       id: 'sncf',
-      company: { en: 'SNCF Réseau', fr: 'SNCF Réseau' },
+      company: { en: 'SNCF Reseau', fr: 'SNCF Réseau' },
       role: { en: 'Software Engineer / Digital Project Lead', fr: 'Ingénieur Logiciel / Pilotage de Projets Numériques' },
       type: { en: 'Apprenticeship', fr: 'Alternance' },
       period: { en: '2023 - 2025', fr: '2023 - 2025' },
@@ -286,7 +305,7 @@ export const resumeConfig: ResumeConfig = {
     },
   ],
 
-  // ===== HOBBIES =====
+  // ===== INTERESTS =====
   hobbies: [
     {
       title: { en: 'Manga', fr: 'Manga' },
@@ -318,11 +337,14 @@ export const resumeConfig: ResumeConfig = {
   labels: {
     sections: {
       contact: { en: 'CONTACT', fr: 'CONTACT' },
+      profile: { en: 'PROFILE', fr: 'PROFIL' },
       skills: { en: 'SKILLS', fr: 'COMPÉTENCES' },
+      softSkills: { en: 'SOFT SKILLS', fr: 'SAVOIR-ÊTRE' },
+      humanLanguages: { en: 'LANGUAGES', fr: 'LANGUES' },
       experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCES PROFESSIONNELLES' },
       education: { en: 'EDUCATION', fr: 'FORMATION' },
       projects: { en: 'PROJECTS', fr: 'PROJETS' },
-      hobbies: { en: 'HOBBIES', fr: 'LOISIRS' },
+      hobbies: { en: 'INTERESTS', fr: 'CENTRES D\'INTÉRÊT' },
     },
     experience: {
       mainTasks: { en: 'Main tasks:', fr: 'Tâches principales :' },

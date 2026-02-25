@@ -29,6 +29,21 @@ export interface SkillItem {
   details?: string
 }
 
+// ===== SOFT SKILLS =====
+
+export interface SoftSkillItem {
+  name: LocalizedString | string
+  icon?: string // optional emoji
+}
+
+// ===== HUMAN LANGUAGES =====
+
+export interface HumanLanguageItem {
+  name: LocalizedString | string
+  level?: LocalizedString
+  details?: string
+}
+
 // ===== EXPERIENCES =====
 
 import type { TechName } from './tech-registry'
@@ -75,7 +90,7 @@ export interface Education {
   logo?: string
 }
 
-// ===== HOBBIES =====
+// ===== HOBBIES / INTERESTS =====
 
 export interface Hobby {
   title: LocalizedString
@@ -111,10 +126,13 @@ export interface ResumeLabels {
   sections: {
     contact: LocalizedString
     skills: LocalizedString
+    softSkills?: LocalizedString
+    humanLanguages?: LocalizedString
     experience: LocalizedString
     education: LocalizedString
     projects?: LocalizedString
     hobbies?: LocalizedString
+    profile?: LocalizedString
   }
   experience: {
     mainTasks: LocalizedString
@@ -139,6 +157,7 @@ export interface ResumeConfig {
     photoBackEmoji?: string
     title: LocalizedString
     subtitle?: LocalizedString
+    profile?: LocalizedString  // Short bio / summary paragraph
     location?: string
   }
   seo: {
@@ -152,6 +171,8 @@ export interface ResumeConfig {
   }
   contact: ContactItem[]
   skills: SkillCategory[]
+  softSkills?: SoftSkillItem[]
+  humanLanguages?: HumanLanguageItem[]
   experiences: Experience[]
   education: Education[]
   projects?: Project[]

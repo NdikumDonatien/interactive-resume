@@ -25,6 +25,11 @@ export const resumeConfig: ResumeConfig = {
       en: '6 years of experience',
       fr: '6 ans d\'expérience',
     },
+    // Optional: short bio shown below header in main content
+    profile: {
+      en: 'Fullstack developer with 6 years of experience building scalable web applications. Passionate about clean architecture, developer experience, and open-source. I thrive in collaborative environments and enjoy mentoring junior developers.',
+      fr: 'Développeuse fullstack avec 6 ans d\'expérience dans la conception d\'applications web scalables. Passionnée par l\'architecture logicielle, l\'expérience développeur et l\'open-source. J\'aime les environnements collaboratifs et le mentorat.',
+    },
     location: 'Paris, France',
   },
 
@@ -55,14 +60,6 @@ export const resumeConfig: ResumeConfig = {
 
   // ===== SKILLS =====
   skills: [
-    {
-      title: { en: 'Languages', fr: 'Langues' },
-      type: 'languages',
-      items: [
-        { name: { en: 'French', fr: 'Français' }, level: { en: 'Native', fr: 'Natif' } },
-        { name: { en: 'English', fr: 'Anglais' }, level: { en: 'Professional', fr: 'Professionnel' }, details: 'TOEIC 910' },
-      ],
-    },
     {
       title: { en: 'Frontend', fr: 'Frontend' },
       type: 'badges',
@@ -298,7 +295,29 @@ export const resumeConfig: ResumeConfig = {
     },
   ],
 
-  // ===== HOBBIES (optional) =====
+  // ===== SOFT SKILLS (optional) =====
+  softSkills: [
+    { name: { en: 'Autonomy', fr: 'Autonomie' }, icon: '🎯' },
+    { name: { en: 'Problem Solving', fr: 'Résolution de problèmes' }, icon: '🔍' },
+    { name: { en: 'Teamwork', fr: 'Travail en équipe' }, icon: '🤝' },
+    { name: { en: 'Communication', fr: 'Communication' }, icon: '💬' },
+    { name: { en: 'Adaptability', fr: 'Adaptabilité' }, icon: '🔄' },
+  ],
+
+  // ===== HUMAN LANGUAGES (optional) =====
+  humanLanguages: [
+    {
+      name: { en: 'French', fr: 'Français' },
+      level: { en: 'Native', fr: 'Natif' },
+    },
+    {
+      name: { en: 'English', fr: 'Anglais' },
+      level: { en: 'Professional', fr: 'Professionnel' },
+      details: 'TOEIC 910',
+    },
+  ],
+
+  // ===== INTERESTS (optional) =====
   hobbies: [
     {
       title: { en: 'Photography', fr: 'Photographie' },
@@ -351,7 +370,10 @@ export const resumeConfig: ResumeConfig = {
       experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCES PROFESSIONNELLES' },
       education: { en: 'EDUCATION', fr: 'FORMATION' },
       projects: { en: 'PROJECTS', fr: 'PROJETS' },
-      hobbies: { en: 'HOBBIES', fr: 'LOISIRS' },
+      profile: { en: 'PROFILE', fr: 'PROFIL' },
+      softSkills: { en: 'SOFT SKILLS', fr: 'SAVOIR-Être' },
+      humanLanguages: { en: 'LANGUAGES', fr: 'LANGUES' },
+      hobbies: { en: 'INTERESTS', fr: 'CENTRES D\'INTÉRÊT' },
     },
     experience: {
       mainTasks: { en: 'Main tasks:', fr: 'Tâches principales :' },

@@ -76,11 +76,11 @@ function SidebarPhoto({ photo, name, emoji }: { photo?: string; name: string; em
 
 export function Sidebar() {
   const { resolve } = useTranslation()
-  const { personal, contact, skills, hobbies, labels } = resumeConfig
+  const { personal, contact, skills, softSkills, humanLanguages, hobbies, labels } = resumeConfig
 
   return (
     <div className="md:w-[38%] bg-gradient-to-b from-resume-sidebar-from to-resume-sidebar-to p-8">
-      {/* Photo / Profile image — priority: config > auto-detected > emoji fallback */}
+      {/* Photo */}
       <SidebarPhoto
         photo={(personal.photo || detectedAssets.photo) ? assetUrl(personal.photo || detectedAssets.photo!) : undefined}
         name={personal.name}
@@ -116,6 +116,7 @@ export function Sidebar() {
                     .join(', ')}
                 </p>
               )}
+              {/* Legacy: human languages embedded in skills (backward compat) */}
               {category.type === 'languages' && (
                 <div className="flex items-center gap-3 text-sm flex-wrap">
                   {category.items.map((item, j) => {
@@ -138,7 +139,48 @@ export function Sidebar() {
         </div>
       </SidebarSection>
 
-      {/* Hobbies */}
+      {/* Soft Skills */}
+      {softSkills && softSkills.length > 0 && labels.sections.softSkills && (
+        <SidebarSection title={resolve(labels.sections.softSkills)}>
+          <div className="flex flex-wrap gap-1.5">
+            {softSkills.map((skill, i) => {
+              const name = typeof skill.name === 'string' ? skill.name : resolve(skill.name)
+              return (
+                <span
+                  key={`${name}-${i}`}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium border border-resume-primary/30 text-resume-text-secondary bg-resume-primary/5"
+                >
+                  {skill.icon && <span>{skill.icon}</span>}
+                  {name}
+                </span>
+              )
+            })}
+          </div>
+        </SidebarSection>
+      )}
+
+      {/* Human Languages */}
+      {humanLanguages && humanLanguages.length > 0 && labels.sections.humanLanguages && (
+        <SidebarSection title={resolve(labels.sections.humanLanguages)}>
+          <div className="space-y-2">
+            {humanLanguages.map((lang, i) => {
+              const name = typeof lang.name === 'string' ? lang.name : resolve(lang.name)
+              const level = lang.level ? resolve(lang.level) : undefined
+              return (
+                <div key={`${name}-${i}`} className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-resume-text">{name}</span>
+                  <span className="text-xs text-resume-text-secondary">
+                    {level}
+                    {lang.details && <span className="ml-1 opacity-70">{lang.details}</span>}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        </SidebarSection>
+      )}
+
+      {/* Interests */}
       {hobbies && hobbies.length > 0 && labels.sections.hobbies && (
         <SidebarSection title={resolve(labels.sections.hobbies)}>
           <div className="grid grid-cols-2 gap-3">
